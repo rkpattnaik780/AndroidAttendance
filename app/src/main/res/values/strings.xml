@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BluetoothAttendance</string>
+    <string name="title_activity_panel">PanelActivity</string>
+    <string name="title_activity_attendance">AttendanceActivity</string>
+</resources>
