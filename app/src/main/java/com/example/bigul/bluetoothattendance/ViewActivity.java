@@ -3,13 +3,18 @@ package com.example.bigul.bluetoothattendance;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.view.View;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewActivity extends AppCompatActivity {
+
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +30,22 @@ public class ViewActivity extends AppCompatActivity {
 
         StudentAdapter adapter = new StudentAdapter(this, studentList);
 
-        ListView listView = (ListView) findViewById(R.id.student_item);
+        listView = (ListView) findViewById(R.id.student_item);
         listView.setAdapter(adapter);
-        // Log.v("ViewActivity" , studentList.get(1).toString());
-        //Log.v("ViewActivity" , "Size - " + studentList.get());
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selected = ((TextView) view.findViewById(R.id.tvName)).getText().toString();
+                Log.v("ViewActivity" , selected);
+            }
+        });
+
     }
+
+
+    //ListView listView = (ListView) findViewById(R.id.student_item);
+
 
 
 }

@@ -41,5 +41,11 @@ public class PanelActivity extends AppCompatActivity {
 
     }
 
+    public void addMember(View view){
+
+        Intent intent = new Intent(PanelActivity.this , AddActivity.class);
+        startActivity(intent);
+    }
+
 
 }

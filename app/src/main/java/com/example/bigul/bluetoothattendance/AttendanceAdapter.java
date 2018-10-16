@@ -29,6 +29,9 @@ public class AttendanceAdapter extends ArrayAdapter<Student> {
         // Populate the data into the template view using the data object
         tvName.setText(student.name);
 
+        TextView tvMAC = (TextView) convertView.findViewById(R.id.tvMAC);
+
+        tvMAC.setText(student.macAddress);
         // Return the completed view to render on screen
         return convertView;
     }
